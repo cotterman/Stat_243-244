@@ -1,0 +1,24 @@
+
+
+*************** Q1: BINARY TREES ****************
+
+
+Time using regular binary trees 10000 times, unsorted  :    2.15 sec
+
+ 
+
+Time using balanced binary trees 10000 times, unsorted  :    2.14 sec
+
+ 
+
+Time using regular binary trees 10000 times, sorted  :    7.86 sec
+
+ 
+
+Time using balanced binary trees 10000 times, sorted  :    1.45 sec
+
+ 
+
+
+*************** Q2: ANOVA ****************
+ 

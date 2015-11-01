@@ -1,0 +1,91 @@
+
+### This program contains relevent R code for all 3 questions of Assignment 4
+
+
+#place output here
+sink('C:/cygwin/home/Carolyn/HW4/hw4_R_out.out')
+
+print('***************************************************')
+print('************** Question 1 test ********************')
+print('***************************************************')
+
+#test for Q1 (taking the inverse of a matrix)
+q1=matrix(c(11, 15, 2, 8 , 30, 4, 5, 7, 13),nrow=3)
+print('Original matrix for Q1')
+print(q1)
+q1inv = solve(q1)
+print('Inverse of original matrix for Q1')
+print(q1inv)
+
+
+print('***************************************************')
+print('***************** Question 2 **********************')
+print('***************************************************')
+
+n = 4 # number of observations
+p = 2 # number of explanatory variables
+x=matrix(c(seq(150,164,2)), nrow=n)
+print('This is the X matrix (explanatory variables)')
+print(x)
+
+y=matrix(c(sin(0:3)),nrow=n)
+print('This is the Y vector (outcomes)')
+print(y)
+
+w = cbind(rbind(t(x) %*% x, t(y) %*% x), rbind(t(x) %*% y, t(y) %*% y))
+print('This is the matrix W = (X:Y)^T (X:Y)')
+print(w)
+
+index = matrix(c(seq(1,p,1)), nrow=p)
+print(index)
+print('********Result from sweeping columns 1 and 2 of matrix W********')
+smat = bsweep(w, index)
+print('coefficients and RSS')
+print(smat)
+meanRSS = smat[(p+1),(p+1)]/(n-p)
+print(meanRSS) 
+t_stderr = matrix(cbind(smat[1,1],smat[p,p])) #take diagonal elements of upper left square
+stderrB = matrix(sqrt(t_stderr[1:p,1]*meanRSS))
+print('standard errors of coefficients')
+print(stderrB)
+
+print('*********Regression Results from lm procedure*********')
+summary(lm(y ~ x + 0))
+
+print('RSS')
+sum((summary(lm(y ~ x + 0))$residuals)^2)
+
+
+print('***************************************************')
+print('***** Question 3 (find starting values) ***********')
+print('***************************************************')
+
+data1 = read.table('C:/cygwin/home/Carolyn/HW4/prob1.dat')
+x1 = data1[,1] #there are 8 observations here
+y1 = data1[,2]
+testvals1 = expand.grid(-100:100, -100:100)  #returns all combos of the 2 vector inputs -- 21*21 = 441 pairs
+function1 = function(row) sum((y1 - row[1]*x1/(row[2]+x1))^2) 
+z1 = apply(testvals1, 1, function1)  #apply function1 to testvals1
+str(z1)
+print('Starting values for use in the non-linear regression, Data1')
+testvals1[which.min(z1),]  #find the values of beta1 and beta2 that minimize the sum of squared residuals
+RSSbest1 = sum( (y1 - 23*x1/(0+x1))^2 )
+RSSbest1  #this should be lower than for any other values of beta1 and beta2 in testvals1
+RSS1b = sum( (y1 - 50*x1/(0+x1))^2 )
+RSS1b  #verified -- this RSS is higher than RSSbest
+
+data2 = read.table('C:/cygwin/home/Carolyn/HW4/prob2.dat')
+x2 = data2[,2:4] #columns 2 - 4 contain explanatory (x) variables
+y2 = data2[,1]  #column 1 contains outcome variable
+testvals2 = expand.grid(-3:3 *10, -3:3 *10, -3:3 *10)  #we want to play with the values of 3 parameters
+function2 = function(row)sum((y2 - (row[1] + x2[1]/(row[2]*x2[2]+row[3]*x2[3])))^2)
+z2 = apply(testvals2, 1, function2)
+print('Starting values for use in the non-linear regression, Data2')
+testvals2[which.min(z2),]
+RSSbest2 = sum( (y2 - (0 + x2[1]/(0*x2[2] + 10*x2[3])))^2 )
+RSSbest2 
+RSS2b = sum( (y2 - (0 + x2[1]/(1*x2[2] + 10*x2[3])))^2 )
+RSS2b 
+
+#revert to placing output in R console
+sink()

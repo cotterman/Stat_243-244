@@ -1,0 +1,175 @@
+
+*************** Question 1 *****************
+Desk Calc: mean is 3.166667 and variance is 131.766667
+Provisional Means Calc: mean is 3.166667 and variance is 131.766667
+Centering Calc: mean is 3.166667 and variance is 131.766667
+
+
+*************** Question 2 *****************
+Baseline: mean is 4.846154, variance is 5.141026, and CV is 0.467873
+ 
+Adding 1 generates CV of 0.38784182790 (mean:5.846154, var: 5.141026)
+Desk Calc: mean is 5.846154 and variance is 5.141026
+Provisional Means Calc: mean is 5.846154 and variance is 5.141026
+Centering Calc: mean is 5.846154 and variance is 5.141026
+Desk mean is wrong
+Desk variance is wrong
+Prov mean is wrong
+Prov variance is wrong
+SAS mean is wrong
+SAS variance is wrong
+Total errors: 6 
+
+Adding 261900 generates CV of 0.00000865728 (mean:261904.846154, var: 5.141026)
+Desk Calc: mean is 261904.846154 and variance is 5.141020
+Provisional Means Calc: mean is 261904.846154 and variance is 5.141026
+Centering Calc: mean is 261904.846154 and variance is 5.141026
+Total errors: 0 
+Adding 261950 generates CV of 0.00000865563 (mean:261954.846154, var: 5.141026)
+Desk Calc: mean is 261954.846154 and variance is 5.141026
+Provisional Means Calc: mean is 261954.846154 and variance is 5.141026
+Centering Calc: mean is 261954.846154 and variance is 5.141026
+Total errors: 0 
+Adding 262000 generates CV of 0.00000865397 (mean:262004.846154, var: 5.141026)
+Desk Calc: mean is 262004.846154 and variance is 5.141024
+Provisional Means Calc: mean is 262004.846154 and variance is 5.141026
+Centering Calc: mean is 262004.846154 and variance is 5.141026
+Total errors: 0 
+Adding 262050 generates CV of 0.00000865232 (mean:262054.846154, var: 5.141026)
+Desk Calc: mean is 262054.846154 and variance is 5.141021
+Provisional Means Calc: mean is 262054.846154 and variance is 5.141026
+Centering Calc: mean is 262054.846154 and variance is 5.141026
+Total errors: 0 
+Adding 262100 generates CV of 0.00000865067 (mean:262104.846154, var: 5.141026)
+Desk Calc: mean is 262104.846154 and variance is 5.141027
+Provisional Means Calc: mean is 262104.846154 and variance is 5.141026
+Centering Calc: mean is 262104.846154 and variance is 5.141026
+Total errors: 0 
+Adding 262150 generates CV of 0.00000864902 (mean:262154.846154, var: 5.141026)
+Desk Calc: mean is 262154.846154 and variance is 5.141041
+Provisional Means Calc: mean is 262154.846154 and variance is 5.141026
+Centering Calc: mean is 262154.846154 and variance is 5.141026
+Desk variance is wrong
+Total errors: 1 
+
+Adding 63000000 generates CV of 0.00000003599 (mean:63000004.846154, var: 5.141026)
+Desk Calc: mean is 63000004.846154 and variance is 4.791667
+Provisional Means Calc: mean is 63000004.846154 and variance is 5.141026
+Centering Calc: mean is 63000004.846154 and variance is 5.141026
+Total errors: 0 
+Adding 63100000 generates CV of 0.00000003593 (mean:63100004.846154, var: 5.141026)
+Desk Calc: mean is 63100004.846154 and variance is 5.083333
+Provisional Means Calc: mean is 63100004.846154 and variance is 5.141026
+Centering Calc: mean is 63100004.846154 and variance is 5.141026
+Total errors: 0 
+Adding 63200000 generates CV of 0.00000003588 (mean:63200004.846154, var: 5.141026)
+Desk Calc: mean is 63200004.846154 and variance is 4.833333
+Provisional Means Calc: mean is 63200004.846154 and variance is 5.141026
+Centering Calc: mean is 63200004.846154 and variance is 5.141026
+Total errors: 0 
+Adding 63300000 generates CV of 0.00000003582 (mean:63300004.846154, var: 5.141026)
+Desk Calc: mean is 63300004.846154 and variance is 3.791667
+Provisional Means Calc: mean is 63300004.846154 and variance is 5.141026
+Centering Calc: mean is 63300004.846154 and variance is 5.141026
+Desk variance is wrong
+Total errors: 1 
+
+Adding 150000000 generates CV of 0.00000001512 (mean:150000004.846154, var: 5.141026)
+Desk Calc: mean is 150000004.846154 and variance is 3.666667
+Provisional Means Calc: mean is 150000004.846154 and variance is 5.141026
+Centering Calc: mean is 150000004.846154 and variance is 5.141026
+Total errors: 0 
+Adding 160000000 generates CV of 0.00000001417 (mean:160000004.846154, var: 5.141026)
+Desk Calc: mean is 160000004.846154 and variance is -0.666667
+Provisional Means Calc: mean is 160000004.846154 and variance is 5.141026
+Centering Calc: mean is 160000004.846154 and variance is 5.141026
+Desk variance is wrong
+Total errors: 1 
+
+
+*************** Question 3 *****************
+
+***Start of array*** 
+0: random_new is 0.32159772445448 
+1: random_new is 0.74658880918287 
+2: random_new is 0.95023989048786 
+3: random_new is 0.76984357438050 
+4: random_new is 0.05812576715834 
+5: random_new is 0.18051456823014 
+6: random_new is 0.65808954578824 
+7: random_new is 0.69063494331203 
+8: random_new is 0.15145132620819 
+9: random_new is 0.06496364413761 
+***End of array*** 
+Mean of my Uni(0,1) R.V. is 0.459205 and variance is 0.113436
+
+***Start of array*** 
+0: random_new is 0.90404403326102 
+1: random_new is 0.06439818791114 
+2: random_new is 0.37869785283692 
+3: random_new is 0.71891625388525 
+4: random_new is 0.48677984368987 
+5: random_new is 0.69908905006014 
+6: random_new is 0.80966763128527 
+7: random_new is 0.77005317597650 
+8: random_new is 0.73556733992882 
+9: random_new is 0.74542145035230 
+10: random_new is 0.60786716942675 
+11: random_new is 0.76095692231320 
+12: random_new is 0.93824927252717 
+13: random_new is 0.80892803496681 
+14: random_new is 0.85106383939274 
+15: random_new is 0.06390666007064 
+16: random_new is 0.44500054535456 
+17: random_new is 0.33936447254382 
+18: random_new is 0.93387376819737 
+19: random_new is 0.79176688357256 
+20: random_new is 0.51036923122592 
+21: random_new is 0.48495750105940 
+22: random_new is 0.11488097836263 
+23: random_new is 0.39246983616613 
+24: random_new is 0.93609883752652 
+25: random_new is 0.59899672470056 
+26: random_new is 0.77078777854331 
+27: random_new is 0.61459168209694 
+28: random_new is 0.57723182183690 
+29: random_new is 0.58627016074024 
+***End of array*** 
+Mean of my Uni(0,1) R.V. is 0.614676 and variance is 0.061669
+
+***Start of array*** 
+***End of array*** 
+Mean of my Uni(0,1) R.V. is 0.497792 and variance is 0.083841
+
+***Start of array*** 
+***End of array*** 
+Mean of my Uni(0,1) R.V. is 0.499697 and variance is 0.083537
+
+
+*************** Question 4 *****************
+
+Create and Analyze 10 Samples of 20 observations for each method (M1 and M2). 
+M1, Sample 0a: mean=0.024843, var=1.263054, max=1.727174, min=-2.006599 
+M1, Sample 0b: mean=0.107435, var=1.018982, max=2.348908, min=-2.231643 
+M1, Sample 1a: mean=-0.126997, var=1.260776, max=2.431983, min=-2.086648 
+M1, Sample 1b: mean=-0.000102, var=0.872022, max=2.030663, min=-1.600495 
+M1, Sample 2a: mean=0.247656, var=0.646589, max=1.828546, min=-1.175841 
+M1, Sample 2b: mean=0.105607, var=1.590333, max=2.307946, min=-1.913932 
+M1, Sample 3a: mean=-0.464479, var=0.863823, max=1.332250, min=-2.536827 
+M1, Sample 3b: mean=-0.103193, var=1.139273, max=1.822295, min=-2.240570 
+M1, Sample 4a: mean=-0.202676, var=0.896178, max=1.365952, min=-1.757388 
+M1, Sample 4b: mean=-0.130413, var=1.438792, max=1.533741, min=-3.201203 
+M2, Sample 0: mean=-0.172227, var=1.521774, max=1.636983, min=-2.843886 
+M2, Sample 1: mean=-0.182123, var=1.137779, max=1.995107, min=-2.292215 
+M2, Sample 2: mean=-0.170411, var=0.583370, max=1.200041, min=-1.982448 
+M2, Sample 3: mean=0.092380, var=0.793405, max=1.519609, min=-1.672083 
+M2, Sample 4: mean=-0.055064, var=1.116986, max=2.761328, min=-1.464591 
+M2, Sample 5: mean=0.106732, var=0.849250, max=1.504466, min=-1.862613 
+M2, Sample 6: mean=-0.070841, var=1.083270, max=1.964721, min=-2.022002 
+M2, Sample 7: mean=0.232786, var=0.962841, max=2.970637, min=-1.736942 
+M2, Sample 8: mean=-0.007200, var=1.899912, max=1.977430, min=-2.178658 
+M2, Sample 9: mean=-0.328753, var=1.045231, max=1.677038, min=-2.456696 
+
+Time the creation of 10000 samples of 10000 observations each for methods M1 and M2. 
+Time for Polar Method :   97.19 sec
+Time for Summing-of-Uniforms Method :   77.42 sec

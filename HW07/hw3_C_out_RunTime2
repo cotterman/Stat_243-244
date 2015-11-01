@@ -1,0 +1,78 @@
+
+********************************************************
+
+********************** USING sdata1 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, beta=0.300000, are good = 1. 
+ 
+Time to run the Downhill Simplex Method 1000 times  :    4.38 sec
+
+Time to run Powell's Method 1000 times  :    8.81 sec
+
+
+********************************************************
+
+********************** USING sdata2 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, 0.200000, 0.100000, beta=0.300000, are good = 1. 
+ 
+Time to run the Downhill Simplex Method 1000 times  :   15.10 sec
+
+Time to run Powell's Method 1000 times  :  118.25 sec
+
+
+********************************************************
+
+********************** USING sdata3 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, 0.200000, beta=0.300000, 0.200000, are good = 1. 
+ 
+Time to run the Downhill Simplex Method 1000 times  :   17.63 sec
+
+Time to run Powell's Method 1000 times  :   41.04 sec
+
+
+********************************************************
+
+********************** USING sdata4 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.500000, beta=0.500000, are good = 1. 
+ 
+Time to run the Downhill Simplex Method 1000 times  :    4.74 sec
+
+Time to run Powell's Method 1000 times  :    7.64 sec
+
+
+********************************************************
+
+********************** USING sdata5 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, beta=0.300000, are good = 1. 
+ 
+Time to run the Downhill Simplex Method 1000 times  :    4.67 sec
+
+Time to run Powell's Method 1000 times  :    6.19 sec
+
+
+Time to get covariances with basic method 1000 times  :    0.14 sec
+
+ 
+
+Time to get covariances using the FFT 1000 times  :    5.63 sec
+
+ 

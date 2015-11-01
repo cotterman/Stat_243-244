@@ -1,0 +1,63 @@
+
+setwd("C:/cygwin/home/Carolyn/244_hw1")
+getwd()
+
+sink("hw1_R_out")
+
+print("### Stat 244, Assignment 1 ###")
+print("")
+
+print("*********Q1:Find the eigenvalues and eigenvectors of a real symmetric matrix******")
+print("")
+
+print("Original Data Matrix")
+x = matrix(c(14,7,15,1,6,7,10,11,2,7,15,11,16,4,13,1,2,4,8,5,6,7,13,5,9), nrow=5, ncol=5)
+x
+tst = x # this matrix will be continually updated - start with it equaling the original matrix 
+while(1){
+	tst = x %*% tst
+	qtst = qr(tst)
+	qq = qr.Q(qtst)
+	tst = qq
+	rr = qr.R(qtst)
+	if(sum(abs(rr[col(rr)!=row(rr)]))<.000000001) break
+}
+print("display results")
+list(Rvec=rr,Qvec=tst)
+print("")
+print("verify results by showing that QRQ' equals our original matrix.")
+tst %*% rr %*% t(tst)
+
+
+print("")
+print("*******Q2:Cluster analysis**********")
+print("")
+
+matD = matrix(scan("crime"),ncol=8,byrow=T)
+matD = scale(matD[,-1]) #normlize the matrix
+print("this is the scaled matrix without the first column")
+matD
+print("")
+
+myerr = rep(0, nrow(matD)) 
+for(i in 1:15){
+   mykmeans = kmeans(x=matD, centers= i ) 
+   myerr[i] = sum(mykmeans$withinss) #total within cluster sum of squares
+}
+print("Total within cluster sum of squares for cluster counts 1 - 16")
+myerr 
+print("")
+print("Pam versus kmeans cluster groupsing")
+print("For 15 clusters")
+pam(x=matD,diss=FALSE,k=15,cluster.only=T)
+kmeans(x=matD,centers=15)$cluster #groupings
+print("For 3 clusters")
+pam(x=matD,diss=FALSE,k=3,cluster.only=T)
+kmeans(x=matD,centers=3)$cluster #groupings
+print("For 5 clusters")
+pam(x=matD,diss=FALSE,k=5,cluster.only=T)
+kmeans(x=matD,centers=5)$cluster #groupings
+
+sink()
+
+

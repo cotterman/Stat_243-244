@@ -1,0 +1,280 @@
+
+********************************************************
+
+********************** USING sdata1 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, beta=0.300000, are good = 1. 
+ 
+Original Data (from R), first 25 observations 
+0.487230  1.029377  0.360662  0.567669  -0.466609  1.049319  -0.723697  -0.893838  -0.532495  -1.067504  -0.516712  -0.955144  -2.582152  -1.553494  0.193347  0.002580  -1.543542  -0.157803  -1.234400  -0.326370  -0.077111  0.408310  0.760800  1.272618  0.929419  
+
+*************** Q1: ARMA Parameter Estimation ****************
+
+Number of parameters: 2 
+ 
+Original vertices matrix:
+Row 0: 0.400000  0.400000  
+Row 1: 0.200000  0.200000  
+Row 2: 0.100000  0.100000  
+
+Starting likstar: 6871.827896 
+
+Starting likstar: 6865.988389 
+
+Starting likstar: 6978.538407 
+
+AMOEBA MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values:
+Row 0: 0.296831  0.296831  
+Row 1: 0.296831  0.296831  
+Row 2: 0.296831  0.296831  
+Minimized likstar values:
+6828.654870 6828.654870 6828.654870 
+Number of function evaluations: 82 
+ 
+Time to run the Downhill Simplex Method 1 times  :    0.00 sec
+
+POWELL'S MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values (Powell):
+0.295891  0.297751  
+Minimized likstar value: 6828.654091 
+Number of function evaluations: 8 
+ 
+Time to run Powell's Method 1 times  :    0.03 sec
+
+
+********************************************************
+
+********************** USING sdata2 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, 0.200000, 0.100000, beta=0.300000, are good = 1. 
+ 
+Original Data (from R), first 25 observations 
+2.057808  0.287421  1.740354  3.482574  0.604200  -0.258792  -0.111023  1.347165  0.797705  0.026944  1.241337  -0.557679  -0.369540  0.204099  1.365070  0.725045  0.147998  0.197034  0.681870  1.641800  1.771752  0.689039  -1.180815  -0.543859  -0.100247  
+
+*************** Q1: ARMA Parameter Estimation ****************
+
+Number of parameters: 4 
+ 
+Original vertices matrix:
+Row 0: 0.300000  0.300000  0.300000  0.300000  
+Row 1: 0.400000  0.300000  0.200000  0.100000  
+Row 2: 0.200000  0.200000  0.200000  0.200000  
+Row 3: 0.300000  0.100000  0.100000  0.100000  
+Row 4: 0.200000  0.100000  0.200000  0.300000  
+
+Starting likstar: 7079.713391 
+
+Starting likstar: 7081.922124 
+
+Starting likstar: 7023.669616 
+
+Starting likstar: 7022.013064 
+
+Starting likstar: 7015.697162 
+
+AMOEBA MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values:
+Row 0: 0.525733  0.074813  0.055831  0.036850  
+Row 1: 0.525733  0.074813  0.055831  0.036850  
+Row 2: 0.525733  0.074813  0.055831  0.036850  
+Row 3: 0.525733  0.074813  0.055831  0.036850  
+Row 4: 0.525733  0.074813  0.055831  0.036850  
+Minimized likstar values:
+6986.377537 6986.377537 6986.377537 6986.377537 6986.377537 
+Number of function evaluations: 227 
+ 
+Time to run the Downhill Simplex Method 1 times  :    0.01 sec
+
+POWELL'S MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values (Powell):
+-0.293580  0.562481  0.091125  0.846465  
+Minimized likstar value: 6989.443198 
+Number of function evaluations: 16 
+ 
+Time to run Powell's Method 1 times  :    0.11 sec
+
+
+********************************************************
+
+********************** USING sdata3 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, 0.200000, beta=0.300000, 0.200000, are good = 1. 
+ 
+Original Data (from R), first 25 observations 
+1.865510  0.555349  0.919312  0.668668  1.247586  0.618232  0.680216  -0.027364  0.265825  -0.950015  0.588718  0.460762  -0.515987  1.899357  1.828740  2.521137  1.280794  1.601155  1.044627  -0.025129  1.410937  1.113595  -0.430450  1.401799  1.239744  
+
+*************** Q1: ARMA Parameter Estimation ****************
+
+Number of parameters: 4 
+ 
+Original vertices matrix:
+Row 0: 0.300000  0.300000  0.300000  0.300000  
+Row 1: 0.400000  0.300000  0.200000  0.100000  
+Row 2: 0.200000  0.200000  0.200000  0.200000  
+Row 3: 0.300000  0.100000  0.100000  0.100000  
+Row 4: 0.200000  0.100000  0.200000  0.300000  
+
+Starting likstar: 6880.720996 
+
+Starting likstar: 6867.368814 
+
+Starting likstar: 6858.158835 
+
+Starting likstar: 6885.944775 
+
+Starting likstar: 6861.296409 
+
+AMOEBA MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values:
+Row 0: 0.372018  0.090076  0.171383  0.252690  
+Row 1: 0.372018  0.090076  0.171383  0.252690  
+Row 2: 0.372018  0.090076  0.171383  0.252690  
+Row 3: 0.372018  0.090076  0.171383  0.252690  
+Row 4: 0.372018  0.090076  0.171383  0.252690  
+Minimized likstar values:
+6837.669639 6837.669639 6837.669639 6837.669639 6837.669639 
+Number of function evaluations: 252 
+ 
+Time to run the Downhill Simplex Method 1 times  :    0.03 sec
+
+POWELL'S MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values (Powell):
+0.053472  0.311403  0.500984  0.203310  
+Minimized likstar value: 6831.371842 
+Number of function evaluations: 9 
+ 
+Time to run Powell's Method 1 times  :    0.06 sec
+
+
+********************************************************
+
+********************** USING sdata4 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.500000, beta=0.500000, are good = 1. 
+ 
+Original Data (from R), first 25 observations 
+2.453918  2.840740  2.382138  0.213431  -0.469333  0.023675  0.421020  1.081653  1.006742  2.598338  1.846203  0.947489  -0.401796  -2.369982  -2.756393  -2.316496  -0.120499  0.508375  0.882798  2.042710  1.212941  2.036567  3.047515  4.359966  1.154001  
+
+*************** Q1: ARMA Parameter Estimation ****************
+
+Number of parameters: 2 
+ 
+Original vertices matrix:
+Row 0: 0.400000  0.400000  
+Row 1: 0.200000  0.200000  
+Row 2: 0.100000  0.100000  
+
+Starting likstar: 6943.347759 
+
+Starting likstar: 7215.928493 
+
+Starting likstar: 7439.858517 
+
+AMOEBA MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values:
+Row 0: 0.476742  0.476742  
+Row 1: 0.476742  0.476742  
+Row 2: 0.476742  0.476742  
+Minimized likstar values:
+6918.486358 6918.486358 6918.486358 
+Number of function evaluations: 89 
+ 
+Time to run the Downhill Simplex Method 1 times  :    0.02 sec
+
+POWELL'S MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values (Powell):
+0.492362  0.461461  
+Minimized likstar value: 6918.245478 
+Number of function evaluations: 6 
+ 
+Time to run Powell's Method 1 times  :    0.01 sec
+
+
+********************************************************
+
+********************** USING sdata5 *******************
+
+********************************************************
+ 
+
+ Verification parameters alpha=0.300000, beta=0.300000, are good = 1. 
+ 
+Original Data (from R), first 25 observations 
+9.572886  1.717910  -0.601425  4.011353  -5.159529  -6.725486  2.383028  13.433441  5.120865  -1.517170  -3.217051  -5.374082  -5.218413  1.399453  -5.655239  -1.157793  -16.080942  -14.565336  -7.334371  -4.689276  -1.756720  9.472524  2.861125  12.522942  3.297620  
+
+*************** Q1: ARMA Parameter Estimation ****************
+
+Number of parameters: 2 
+ 
+Original vertices matrix:
+Row 0: 0.400000  0.400000  
+Row 1: 0.200000  0.200000  
+Row 2: 0.100000  0.100000  
+
+Starting likstar: 10181.504729 
+
+Starting likstar: 10164.549303 
+
+Starting likstar: 10271.452981 
+
+AMOEBA MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values:
+Row 0: 0.289647  0.289647  
+Row 1: 0.289647  0.289647  
+Row 2: 0.289647  0.289647  
+Minimized likstar values:
+10132.644853 10132.644853 10132.644853 
+Number of function evaluations: 90 
+ 
+Time to run the Downhill Simplex Method 1 times  :   -0.00 sec
+
+POWELL'S MINIMIZATION PROCEDURE BEGINS 
+
+ARMA parameter values (Powell):
+0.287971  0.291732  
+Minimized likstar value: 10132.642396 
+Number of function evaluations: 5 
+ 
+Time to run Powell's Method 1 times  :    0.02 sec
+
+
+
+*************** Q2: Autocovariance Estimation ****************
+ 
+Mean is 0.183790 and variance is 34.318859 
+ 
+The first 24 covariances (using basic formula) are: 
+34.284540  17.139743  5.116498  2.163503  1.132704  -0.658746  -1.254162  -1.802236  -2.563399  -1.908150  -1.199237  -0.536833  0.268156  0.129904  -0.714407  -0.397284  -0.676984  -0.834880  -0.295274  0.665243  1.154693  0.835014  0.668983  0.858078  
+Time to get covariances with basic method 1 times  :    0.00 sec
+
+ 
+Covariances using FFT:
+This 1 by 24 matrix contains the following elements:
+Row 0: 36.688502  -13.324687  18.905070  -16.281895  6.739399  -10.098653  3.133730  -6.294443  0.375321  -5.431151  -3.502996  -5.446075  -4.523793  -6.263481  -3.657008  -5.412368  -3.639939  -3.237518  -2.862974  -2.623386  -1.213642  -1.439507  -0.495641  -0.592971  
+
+
+Time to get covariances using the FFT 1 times  :    0.02 sec
+
+ 

@@ -1,0 +1,160 @@
+
+*************** QUESTION 1 ****************
+
+The original matrix A:
+This 3 by 3 matrix contains the following elements:
+Row 0: 2.000000  -1.000000  0.000000  
+Row 1: -1.000000  2.000000  -1.000000  
+Row 2: 0.000000  -1.000000  2.000000  
+
+The lower diagonal matrix L:
+This 3 by 3 matrix contains the following elements:
+Row 0: 1.414214  0.000000  0.000000  
+Row 1: -0.707107  1.224745  0.000000  
+Row 2: 0.000000  -0.816497  1.154701  
+
+The upper diagonal matrix U:
+This 3 by 3 matrix contains the following elements:
+Row 0: 1.414214  -0.707107  0.000000  
+Row 1: 0.000000  1.224745  -0.816497  
+Row 2: 0.000000  0.000000  1.154701  
+
+This should be our original matrix A:
+This 3 by 3 matrix contains the following elements:
+Row 0: 2.000000  -1.000000  0.000000  
+Row 1: -1.000000  2.000000  -1.000000  
+Row 2: 0.000000  -1.000000  2.000000  
+
+
+*************** QUESTION 2 ****************
+
+observations to look at: 8999, 9499, 9899 
+Uncorrelated obs percentiles: 90th=2.184615, 95th=2.770003, 99th=4.187849
+Correlated obs percentiles: 90th=14.992662, 95th=19.465061, 99th=29.979936
+
+
+*************** QUESTION 3 ****************
+
+Matrix X3, GS orthogonalization original
+This 5 by 4 matrix contains the following elements:
+Row 0: 1.000000  4.000000  14.000000  17.000000  
+Row 1: 5.000000  6.000000  10.000000  8.000000  
+Row 2: 0.000000  2.000000  7.000000  4.000000  
+Row 3: 1.000000  13.000000  0.000000  9.000000  
+Row 4: 2.000000  5.000000  33.000000  10.000000  
+
+Matrix Q3 (should be orthonormal)
+This 5 by 4 matrix contains the following elements:
+Row 0: 0.032258  0.016194  0.009832  0.031519  
+Row 1: 0.161290  0.023437  0.006833  0.014295  
+Row 2: 0.000000  0.008219  0.004937  0.007430  
+Row 3: 0.032258  0.053178  -0.000086  0.016541  
+Row 4: 0.064516  0.020059  0.023206  0.018346  
+
+Matrix R3 (should be upper triangular)
+This 4 by 4 matrix contains the following elements:
+Row 0: 31.000000  1.838710  4.193548  2.774194  
+Row 1: 0.000000  243.347353  1.180573  1.174860  
+Row 2: 0.000000  0.000000  1415.937592  0.472840  
+Row 3: 0.000000  0.000000  0.000000  536.729629  
+
+Matrix X3, recreated
+This 5 by 4 matrix contains the following elements:
+Row 0: 1.000000  4.000000  14.075963  17.030084  
+Row 1: 5.000000  6.000000  10.379813  8.150751  
+Row 2: 0.000000  2.000000  7.000000  3.999953  
+Row 3: 1.000000  13.000000  0.075963  9.029873  
+Row 4: 2.000000  5.000000  33.151925  10.060239  
+
+
+
+*************** QUESTION 4 ****************
+
+
+***** Regression 1: data entered in C code *****
+
+Matrix X, GS regression original
+This 5 by 4 matrix contains the following elements:
+Row 0: 2.000000  5.000000  33.000000  10.000000  
+Row 1: 4.000000  14.000000  17.000000  1.000000  
+Row 2: 6.000000  10.000000  8.000000  5.000000  
+Row 3: 2.000000  7.000000  4.000000  0.000000  
+Row 4: 13.000000  0.000000  9.000000  1.000000  
+
+Matrix Y for GS regression
+This 5 by 1 matrix contains the following elements:
+Row 0: 4.000000  
+Row 1: 9.000000  
+Row 2: 5.000000  
+Row 3: 2.000000  
+Row 4: 13.000000  
+
+****Beta Coefficients 
+This 4 by 1 matrix contains the following elements:
+Row 0: 0.004698  
+Row 1: 0.001530  
+Row 2: 0.000190  
+Row 3: 0.005413  
+
+****Std Errs for Beta Coefficients 
+This 4 by 1 matrix contains the following elements:
+Row 0: 0.000256  
+Row 1: 0.000159  
+Row 2: 0.000038  
+Row 3: 0.000466  
+
+****Residuals
+This 5 by 1 matrix contains the following elements:
+Row 0: 0.013456  
+Row 1: 0.030678  
+Row 2: 0.016899  
+Row 3: 0.006761  
+Row 4: 0.044522  
+
+****MSE: 0.003436
+
+
+
+***** Regression 2: data read from text file *****
+
+Matrix X2 (from file), GS regression original
+This 6 by 3 matrix contains the following elements:
+Row 0: 8.000000  12.000000  4.000000  
+Row 1: 2.000000  2.000000  14.000000  
+Row 2: 1.000000  5.000000  9.000000  
+Row 3: 3.000000  4.000000  16.000000  
+Row 4: 13.000000  7.000000  5.000000  
+Row 5: 6.000000  3.000000  11.000000  
+
+Matrix Y2 (from file) for GS regression
+This 6 by 1 matrix contains the following elements:
+Row 0: 19.000000  
+Row 1: 4.000000  
+Row 2: 15.000000  
+Row 3: 9.000000  
+Row 4: 18.000000  
+Row 5: 2.000000  
+
+****Beta Coefficients 
+This 3 by 1 matrix contains the following elements:
+Row 0: 0.005568  
+Row 1: 0.007907  
+Row 2: 0.001087  
+
+****Std Errs for Beta Coefficients 
+This 3 by 1 matrix contains the following elements:
+Row 0: 0.000064  
+Row 1: 0.000074  
+Row 2: 0.000026  
+
+****Residuals
+This 6 by 1 matrix contains the following elements:
+Row 0: 0.018860  
+Row 1: 0.003958  
+Row 2: 0.014916  
+Row 3: 0.008927  
+Row 4: 0.017869  
+Row 5: 0.001952  
+
+****MSE: 0.000332
+

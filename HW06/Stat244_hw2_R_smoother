@@ -1,0 +1,132 @@
+
+#####################################################
+##### Stat 244, Assignment 2 (Dynamic Graphics) #####
+#####################################################
+
+rm(list = ls())
+setwd("C:/cygwin/home/Carolyn/244_hw2")
+getwd()
+library(tcltk) # The tcltk package gives simple access to the Tcl/Tk toolki
+
+#This data can be used to test program
+sadata = read.table("SAheart.txt", header=T, sep=",") #South-African heart disease data
+sadata = sadata[,-6] #this function will only work with numeric data -- does not deal with factors
+str(sadata)
+
+
+########## Density Estimator ##############
+
+require(tcltk) || stop("tcltk support is absent")
+
+  doslider <- function(...){
+    	span <- as.numeric(tclvalue(span))
+	mycol <- as.numeric(tclvalue(mycol))
+	mykernel <- as.vector(tclvalue(mykernel))
+ 	myvec <- get(tclvalue(myvector))
+   	if(span == 0)span <- 1e-6
+      plot(density(x = myvec[,mycol], bw = span, na.rm = TRUE, kernel=mykernel), main="Kernel Density")
+  }
+  makeslide <- function(...){
+	slide <- tkframe(mainfrm,relief="groove",borderwidth=2)
+  	tkpack(tklabel(slide,text="Specify bandwidth here:"))
+  	tkpack(tkscale(slide,command=doslider,from=0,to=50,showvalue=T,variable=span,resolution=.01,orient="horiz"))
+	tkpack(mainfrm,slide)
+  }
+
+  base <- tktoplevel()  #create top-level frame
+  tkwm.title(base,'Kernel Density Smoother')
+  mainfrm <- tkframe(base,borderwidth=2)
+
+  tkpack(mainfrm,tklabel(mainfrm,text="Specify your dataframe, column, and kernel."))
+  tkpack(mainfrm,tklabel(mainfrm,text="Your kernel can be gaussian, epanechnikov, rectangular, triangular, biweight, cosine, or optcosine."))
+  tkpack(mainfrm,tklabel(mainfrm,text="After entering specifications, press enter."))
+
+  span <- tclVar(0) #this is the standard deviation of the smoothing kernel
+
+  f1 = tkframe(mainfrm)
+  myvector <- tclVar("<dataframe here>")
+  vecentry <- tkentry(f1,width=25,textvariable=myvector)
+
+  f2 = tkframe(mainfrm)
+  mycol <- tclVar("<column number here>")
+  colentry <- tkentry(f2,width=25,textvariable=mycol)
+
+  f3 = tkframe(mainfrm)
+  mykernel <- tclVar("<kernel here>")
+  kentry <- tkentry(f3,width=25,textvariable=mykernel)
+
+  tkbind(kentry,"<Return>",makeslide)
+  tkbind(kentry,"<Destroy>",function()print('You have exited the smoother GUI.'))
+
+  #above we packed widgets into frames.  now we must pack these frames into the mainframe.
+  tkpack(mainfrm,f1)
+  tkpack(mainfrm,f2)
+  tkpack(mainfrm,f3)
+  tkpack(mainfrm,vecentry)
+  tkpack(mainfrm,colentry)
+  tkpack(mainfrm,kentry)
+
+
+###Effect of Bandwidth###
+#par(ask=T)
+#par(mfrow=(c(2,2)))
+#plot(density(x=sadata$age, bw = 1e-6, na.rm = TRUE, kernel="gaussian"), main="Small Bandwidth")
+#plot(density(x=sadata$age, bw = 3, na.rm = TRUE, kernel="gaussian"), main="Medium Bandwidth")
+#plot(density(x=sadata$age, bw = 10, na.rm = TRUE, kernel="gaussian"), main="Large Bandwidth")
+#plot(density(x=sadata$age, bw = 10000000, na.rm = TRUE, kernel="gaussian"), main="Very Large Bandwidth")
+#dev.print(pdf, file = "Bandwidth_effects_gaussian.pdf", height=7, width=7)
+#dev.off()
+###Effect of Kernel Function###
+#par(mfrow=(c(2,2)))
+#plot(density(x=sadata$age, bw = 3, na.rm = TRUE, kernel="cosine"), main="Cosine")
+#plot(density(x=sadata$age, bw = 3, na.rm = TRUE, kernel="epanechnikov"), main="Epanechnikov")
+#plot(density(x=sadata$age, bw = 3, na.rm = TRUE, kernel="triangular"), main="Triangular")
+#plot(density(x=sadata$age, bw = 3, na.rm = TRUE, kernel="rectangular"), main="Rectangular")
+#dev.print(pdf, file = "Function_effects.pdf", height=7, width=7)
+#par(ask=F)
+#par(mfrow=(c(1,1)))
+
+
+########## Smoothing Function ##############
+
+supsmufn <- function(x,y){
+  require(tcltk) || stop("tcltk support is absent")
+  supsmufn.auto <<- 0
+  chngplt <- function(...){
+    span <- as.numeric(tclvalue(span))
+    if(span == 0)span <- 1e-6
+    smth <- supsmu(x,y,span=span) #this is the smoothing function
+    plot(x,y)
+    lines(smth$x,smth$y)
+    if(supsmufn.auto == 1)dobaseplot()
+  }
+  baseplot <- function(...){
+    if(supsmufn.auto == 0)supsmufn.auto <<- 1
+    else supsmufn.auto <<- 0
+    if(supsmufn.auto)dobaseplot(x,y)
+  }
+  dobaseplot <- function(...){
+    smth <- supsmu(x,y)
+    lines(smth$x,smth$y,lty=2)
+  }
+  base <- tktoplevel()
+  tkwm.title(base,"Super Smoother")
+  mainfrm <- tkframe(base,borderwidth=2)
+  slide <- tkframe(mainfrm,relief="groove",borderwidth=2)
+  tkpack(tklabel(slide,text="Span"))
+  span <- tclVar(0)
+  tkpack(tkscale(slide,command=chngplt,from=0,to=1.0,showvalue=T,variable=span,resolution=.01,orient="horiz"))
+  tkpack(mainfrm,slide)
+  butfrm <- tkframe(mainfrm,borderwidth=2,relief="groove")
+  a.but <- tkbutton(butfrm,command=baseplot,text="Auto")
+  q.but <- tkbutton(butfrm,text="Quit",command=function()tkdestroy(base))
+  tkpack(butfrm,a.but,side="left")
+  tkpack(butfrm,q.but,side="right")
+  tkpack(mainfrm,butfrm)
+}
+
+#supsmufn(sadata$age, sadata$obesity) 
+
+
+
+

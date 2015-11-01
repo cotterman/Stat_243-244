@@ -1,0 +1,387 @@
+
+
+*************** QUESTION 1 (Calculating Eigenvalues & Eigenvectors) ****************
+
+Matrix A, original (should be full-rank and symmetric)
+This 5 by 5 matrix contains the following elements:
+Row 0: 14.000000  7.000000  15.000000  1.000000  6.000000  
+Row 1: 7.000000  10.000000  11.000000  2.000000  7.000000  
+Row 2: 15.000000  11.000000  16.000000  4.000000  13.000000  
+Row 3: 1.000000  2.000000  4.000000  8.000000  5.000000  
+Row 4: 6.000000  7.000000  13.000000  5.000000  9.000000  
+
+Time to run the Power Method 100000 times  :   12.18 sec
+
+Matrix R (should be diagonal matrix)
+This 5 by 5 matrix contains the following elements:
+Row 0: 44.290801  0.000000  0.000000  0.000000  0.000000  
+Row 1: 0.000000  9.504346  0.000000  0.000000  0.000000  
+Row 2: -0.000000  0.000000  4.561378  0.000000  0.000000  
+Row 3: -0.000000  -0.000000  0.000000  3.253732  0.000000  
+Row 4: 0.000000  0.000000  0.000000  0.000000  1.897207  
+
+Matrix X'X (should be the identity matrix)
+This 5 by 5 matrix contains the following elements:
+Row 0: 1.000000  0.000000  0.000000  0.000000  0.000000  
+Row 1: 0.000000  1.000000  0.000000  0.000000  0.000000  
+Row 2: 0.000000  0.000000  1.000000  0.000000  0.000000  
+Row 3: -0.000000  0.000000  -0.000000  1.000000  0.000000  
+Row 4: -0.000000  -0.000000  -0.000000  0.000000  1.000000  
+
+Matrix X (eigenvectors appear as columns)
+This 5 by 5 matrix contains the following elements:
+Row 0: 0.492507  0.397744  0.630881  0.162626  0.418065  
+Row 1: -0.513028  0.009592  -0.050873  0.771971  0.371729  
+Row 2: 0.507736  -0.743769  0.051617  0.412046  -0.128707  
+Row 3: -0.410820  -0.123350  0.736906  0.028297  -0.521710  
+Row 4: -0.260133  -0.522782  0.231746  -0.455006  0.631104  
+
+The eigenvalues are as follows:
+44.290801  9.504346  4.561378  3.253732  1.897207  
+ 
+Time to run the LAPACK DSYEV Routine 100000 times  :    1.07 sec
+
+Matrix from LAPACK (eigenvectors appear as rows)
+This 5 by 5 matrix contains the following elements:
+Row 0: -0.410820  0.260133  0.507736  0.513028  0.492507  
+Row 1: -0.123350  0.522782  -0.743769  -0.009592  0.397744  
+Row 2: 0.736906  -0.231746  0.051617  0.050873  0.630881  
+Row 3: 0.028297  0.455006  0.412046  -0.771971  0.162626  
+Row 4: -0.521710  -0.631104  -0.128707  -0.371729  0.418065  
+
+The eigenvalues from LAPACK are as follows:
+-3.253732  1.897207  4.561378  9.504346  44.290801  
+
+
+*************** QUESTION 2 (Cluster Analysis) ****************
+Crime Data Matrix (from file)
+This 16 by 8 matrix contains the following elements:
+Row 0: 1.000000  165.000000  248.000000  106.000000  147.000000  1112.000000  905.000000  494.000000  
+Row 1: 2.000000  42.000000  133.000000  122.000000  90.000000  982.000000  669.000000  954.000000  
+Row 2: 3.000000  116.000000  247.000000  340.000000  242.000000  808.000000  609.000000  645.000000  
+Row 3: 4.000000  181.000000  342.000000  184.000000  293.000000  1668.000000  901.000000  602.000000  
+Row 4: 5.000000  69.000000  415.000000  173.000000  191.000000  1534.000000  1368.000000  780.000000  
+Row 5: 6.000000  130.000000  357.000000  477.000000  220.000000  1566.000000  1183.000000  788.000000  
+Row 6: 7.000000  25.000000  88.000000  68.000000  103.000000  1017.000000  724.000000  468.000000  
+Row 7: 8.000000  36.000000  127.000000  42.000000  28.000000  1457.000000  1102.000000  637.000000  
+Row 8: 9.000000  168.000000  266.000000  289.000000  186.000000  1509.000000  787.000000  697.000000  
+Row 9: 10.000000  108.000000  432.000000  255.000000  226.000000  1494.000000  955.000000  765.000000  
+Row 10: 11.000000  97.000000  518.000000  286.000000  355.000000  1902.000000  1386.000000  862.000000  
+Row 11: 12.000000  103.000000  397.000000  266.000000  283.000000  1056.000000  1036.000000  776.000000  
+Row 12: 13.000000  94.000000  194.000000  522.000000  267.000000  1674.000000  1392.000000  848.000000  
+Row 13: 14.000000  50.000000  230.000000  157.000000  144.000000  1530.000000  1281.000000  488.000000  
+Row 14: 15.000000  51.000000  229.000000  85.000000  148.000000  1206.000000  756.000000  483.000000  
+Row 15: 16.000000  125.000000  276.000000  524.000000  217.000000  1496.000000  1003.000000  739.000000  
+
+Normlized Crime Data Matrix
+This 16 by 8 matrix contains the following elements:
+Row 0: 1.000000  1.374862  -0.275217  -0.874564  -0.583191  -0.864407  -0.376787  -1.293500  
+Row 1: 2.000000  -1.130442  -1.228890  -0.772796  -1.258153  -1.290567  -1.278974  1.755878  
+Row 2: 3.000000  0.376814  -0.283510  0.613785  0.541746  -1.860965  -1.508343  -0.292508  
+Row 3: 4.000000  1.700756  0.504306  -0.378447  1.145659  0.958244  -0.392078  -0.577559  
+Row 4: 5.000000  -0.580497  1.109681  -0.448413  -0.062168  0.518972  1.393181  0.602418  
+Row 5: 6.000000  0.661971  0.628698  1.485168  0.281234  0.623873  0.685958  0.655451  
+Row 6: 7.000000  -1.476704  -1.602066  -1.116261  -1.104214  -1.175831  -1.068718  -1.465856  
+Row 7: 8.000000  -1.252652  -1.278647  -1.281633  -1.992322  0.266555  0.376309  -0.345541  
+Row 8: 9.000000  1.435967  -0.125947  0.289401  -0.121375  0.437018  -0.827880  0.052204  
+Row 9: 10.000000  0.213867  1.250659  0.073145  0.352283  0.387846  -0.185646  0.502982  
+Row 10: 11.000000  -0.010184  1.963840  0.270320  1.879828  1.725331  1.461991  1.146003  
+Row 11: 12.000000  0.112026  0.960410  0.143110  1.027245  -1.047984  0.124003  0.575902  
+Row 12: 13.000000  -0.071289  -0.723029  1.771389  0.837782  0.977913  1.484928  1.053196  
+Row 13: 14.000000  -0.967496  -0.424488  -0.550180  -0.618715  0.505860  1.060595  -1.333274  
+Row 14: 15.000000  -0.947127  -0.432781  -1.008133  -0.571349  -0.556261  -0.946388  -1.366420  
+Row 15: 16.000000  0.560129  -0.043019  1.784110  0.245710  0.394402  -0.002150  0.330626  
+
+*** RESULTS USING TRESHOLD 1.000000l ***
+Total Number of clusters: 16 
+Total within cluster sum of squares: 0.000000l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 3.000000l 
+Cluster 3 -> 4.000000l 
+Cluster 4 -> 5.000000l 
+Cluster 5 -> 6.000000l 
+Cluster 6 -> 7.000000l 
+Cluster 7 -> 8.000000l 
+Cluster 8 -> 9.000000l 
+Cluster 9 -> 10.000000l 
+Cluster 10 -> 11.000000l 
+Cluster 11 -> 12.000000l 
+Cluster 12 -> 13.000000l 
+Cluster 13 -> 14.000000l 
+Cluster 14 -> 15.000000l 
+Cluster 15 -> 16.000000l 
+
+*** RESULTS USING TRESHOLD 2.000000l ***
+Total Number of clusters: 15 
+Total within cluster sum of squares: 1.969179l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 3.000000l 
+Cluster 3 -> 4.000000l 
+Cluster 4 -> 5.000000l 
+Cluster 5 -> 6.000000l 16.000000l 
+Cluster 6 -> 7.000000l 
+Cluster 7 -> 8.000000l 
+Cluster 8 -> 9.000000l 
+Cluster 9 -> 10.000000l 
+Cluster 10 -> 11.000000l 
+Cluster 11 -> 12.000000l 
+Cluster 12 -> 13.000000l 
+Cluster 13 -> 14.000000l 
+Cluster 14 -> 15.000000l 
+
+*** RESULTS USING TRESHOLD 3.000000l ***
+Total Number of clusters: 13 
+Total within cluster sum of squares: 16.444584l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 3.000000l 
+Cluster 3 -> 4.000000l 
+Cluster 4 -> 5.000000l 
+Cluster 5 -> 6.000000l 16.000000l 
+Cluster 6 -> 7.000000l 15.000000l 
+Cluster 7 -> 8.000000l 
+Cluster 8 -> 9.000000l 
+Cluster 9 -> 10.000000l 12.000000l 
+Cluster 10 -> 11.000000l 
+Cluster 11 -> 13.000000l 
+Cluster 12 -> 14.000000l 
+
+*** RESULTS USING TRESHOLD 4.000000l ***
+Total Number of clusters: 11 
+Total within cluster sum of squares: 63.978156l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 3.000000l 
+Cluster 3 -> 4.000000l 9.000000l 
+Cluster 4 -> 5.000000l 
+Cluster 5 -> 6.000000l 10.000000l 13.000000l 16.000000l 
+Cluster 6 -> 7.000000l 15.000000l 
+Cluster 7 -> 8.000000l 
+Cluster 8 -> 11.000000l 
+Cluster 9 -> 12.000000l 
+Cluster 10 -> 14.000000l 
+
+*** RESULTS USING TRESHOLD 5.000000l ***
+Total Number of clusters: 10 
+Total within cluster sum of squares: 72.493709l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 3.000000l 
+Cluster 3 -> 4.000000l 9.000000l 
+Cluster 4 -> 5.000000l 
+Cluster 5 -> 6.000000l 10.000000l 13.000000l 16.000000l 
+Cluster 6 -> 7.000000l 15.000000l 
+Cluster 7 -> 8.000000l 14.000000l 
+Cluster 8 -> 11.000000l 
+Cluster 9 -> 12.000000l 
+
+*** RESULTS USING TRESHOLD 6.000000l ***
+Total Number of clusters: 9 
+Total within cluster sum of squares: 108.820843l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 3.000000l 
+Cluster 3 -> 4.000000l 9.000000l 
+Cluster 4 -> 5.000000l 
+Cluster 5 -> 6.000000l 10.000000l 12.000000l 13.000000l 16.000000l 
+Cluster 6 -> 7.000000l 15.000000l 
+Cluster 7 -> 8.000000l 14.000000l 
+Cluster 8 -> 11.000000l 
+
+*** RESULTS USING TRESHOLD 7.000000l ***
+Total Number of clusters: 8 
+Total within cluster sum of squares: 106.641358l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 3.000000l 
+Cluster 3 -> 4.000000l 9.000000l 
+Cluster 4 -> 5.000000l 6.000000l 10.000000l 12.000000l 14.000000l 
+Cluster 5 -> 7.000000l 8.000000l 15.000000l 
+Cluster 6 -> 11.000000l 
+Cluster 7 -> 13.000000l 16.000000l 
+
+*** RESULTS USING TRESHOLD 8.000000l ***
+Total Number of clusters: 5 
+Total within cluster sum of squares: 288.793017l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 9.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 5.000000l 6.000000l 10.000000l 11.000000l 12.000000l 14.000000l 
+Cluster 3 -> 7.000000l 8.000000l 15.000000l 
+Cluster 4 -> 13.000000l 16.000000l 
+
+*** RESULTS USING TRESHOLD 9.000000l ***
+Total Number of clusters: 5 
+Total within cluster sum of squares: 288.793017l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 9.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 5.000000l 6.000000l 10.000000l 11.000000l 12.000000l 14.000000l 
+Cluster 3 -> 7.000000l 8.000000l 15.000000l 
+Cluster 4 -> 13.000000l 16.000000l 
+
+*** RESULTS USING TRESHOLD 10.000000l ***
+Total Number of clusters: 4 
+Total within cluster sum of squares: 618.334467l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 9.000000l 
+Cluster 1 -> 2.000000l 
+Cluster 2 -> 5.000000l 6.000000l 10.000000l 11.000000l 12.000000l 13.000000l 14.000000l 16.000000l 
+Cluster 3 -> 7.000000l 8.000000l 15.000000l 
+
+*** RESULTS USING TRESHOLD 11.000000l ***
+Total Number of clusters: 3 
+Total within cluster sum of squares: 816.785065l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 7.000000l 9.000000l 15.000000l 
+Cluster 1 -> 2.000000l 8.000000l 
+Cluster 2 -> 5.000000l 6.000000l 10.000000l 11.000000l 12.000000l 13.000000l 14.000000l 16.000000l 
+
+*** RESULTS USING TRESHOLD 12.000000l ***
+Total Number of clusters: 3 
+Total within cluster sum of squares: 816.785065l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 7.000000l 9.000000l 15.000000l 
+Cluster 1 -> 2.000000l 8.000000l 
+Cluster 2 -> 5.000000l 6.000000l 10.000000l 11.000000l 12.000000l 13.000000l 14.000000l 16.000000l 
+
+*** RESULTS USING TRESHOLD 13.000000l ***
+Total Number of clusters: 3 
+Total within cluster sum of squares: 816.785065l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 7.000000l 9.000000l 15.000000l 
+Cluster 1 -> 2.000000l 8.000000l 
+Cluster 2 -> 5.000000l 6.000000l 10.000000l 11.000000l 12.000000l 13.000000l 14.000000l 16.000000l 
+
+*** RESULTS USING TRESHOLD 14.000000l ***
+Total Number of clusters: 3 
+Total within cluster sum of squares: 816.785065l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 7.000000l 9.000000l 15.000000l 
+Cluster 1 -> 2.000000l 8.000000l 
+Cluster 2 -> 5.000000l 6.000000l 10.000000l 11.000000l 12.000000l 13.000000l 14.000000l 16.000000l 
+
+*** RESULTS USING TRESHOLD 15.000000l ***
+Total Number of clusters: 3 
+Total within cluster sum of squares: 296.523854l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 2.000000l 8.000000l 
+Cluster 2 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 16.000000l ***
+Total Number of clusters: 3 
+Total within cluster sum of squares: 296.523854l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 2.000000l 8.000000l 
+Cluster 2 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 17.000000l ***
+Total Number of clusters: 3 
+Total within cluster sum of squares: 296.523854l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 2.000000l 8.000000l 
+Cluster 2 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 18.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 19.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 20.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 21.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 22.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 23.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 24.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 25.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 26.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 27.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 28.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 29.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+
+*** RESULTS USING TRESHOLD 30.000000l ***
+Total Number of clusters: 2 
+Total within cluster sum of squares: 440.299341l 
+Members of each cluster: 
+Cluster 0 -> 1.000000l 2.000000l 3.000000l 4.000000l 5.000000l 6.000000l 7.000000l 8.000000l 9.000000l 10.000000l 12.000000l 14.000000l 15.000000l 16.000000l 
+Cluster 1 -> 11.000000l 13.000000l 
+

@@ -1,0 +1,87 @@
+
+#########################################
+##### Stat 244, Assignment 3 (ARMA) #####
+#########################################
+
+rm(list = ls())
+setwd("C:/cygwin/home/Carolyn/244_hw3")
+getwd()
+sink("hw3_R_out")
+install.packages("dse")
+library("dse")
+
+## Generate 5 sequences of 1000 observations from 5 different ARMA prcesses
+#Notes: 
+	#order = allows us to specify the following:
+ 		#an AR order (p), degree of differencing (for non-stationary models)(d), and the MA order (q) 
+	#n.start = the length of the "burn in" period.  If not specified, a "reasonable value" is chosen
+	#innov = specifies vector or error terms
+#par(ask=T)
+
+set.seed(101)
+N=1000
+
+sim1 <- arima.sim(n=N, model = list(ar=c(.3),ma=c(.3)), innov=rnorm(mean=0,sd=1,n=N), n.start = NA)
+sim2 <- arima.sim(n=N, model = list(ar=c(.3,.2,.1),ma=c(.3)), innov=rnorm(mean=0,sd=1,n=N), n.start = NA)
+sim3 <- arima.sim(n=N, model = list(ar=c(.3,.2),ma=c(.3,.2)), innov=rnorm(mean=0,sd=1,n=N), n.start = NA)
+sim4 <- arima.sim(n=N, model = list(ar=c(.5),ma=c(.5)), innov=rnorm(mean=0,sd=1,n=N), n.start = NA)
+sim5 <- arima.sim(n=N, model = list(ar=c(.3),ma=c(.3)), innov=rnorm(mean=0,sd=5,n=N), n.start = NA) #high var
+
+
+## Estimate the parameters
+arima(sim1, order = c(1,0,1))
+arima(sim2, order = c(3,0,1))
+print(arima(sim3, order = c(2,0,2)))
+arima(sim4, order = c(1,0,1))
+arima(sim5, order = c(1,0,1))
+
+#calculate the theoretical covariances for lags of 1 to 20 
+  ARMAacf(ar = .3, ma = 0, lag.max=20, pacf = FALSE) 
+  ARMAacf(ar = 0, ma = .3, lag.max=20, pacf = FALSE) 
+  print(ARMAacf(ar = .3, ma = .3, lag.max=20, pacf = FALSE)) 
+  ARMAacf(ar = c(.3,.2,.1), ma = 0, lag.max=20, pacf = FALSE) 
+  ARMAacf(ar = 0, ma = c(.3,.2,.1), lag.max=20, pacf = FALSE) 
+  ARMAacf(ar = c(.3,.2,.1), ma = c(.3,.2,.1), lag.max=20, pacf = FALSE) 
+
+#Finding the covariances using the Fast Fourier Transform
+   k = 24
+   test1 = c(sim1 - mean(sim1),rep(0,k))
+	str(test1)
+	head(test1,n=k)
+   dft = fft(test1)
+	str(dft)
+	tail(dft,n=k)
+   sqrmod = Mod(dft)^2
+	str(sqrmod)
+	head(sqrmod,n=k)
+   idft = fft(sqrmod,inverse=TRUE) / (1000+k)
+   cov = idft / 1000
+	str(cov)
+   	head(cov,n=k)
+
+#export the simulated data for input to C program
+write.table(x=sim1, file="sdata1", sep=" ", row.names=FALSE, col.names=FALSE)
+write.table(x=sim2, file="sdata2", sep=" ", row.names=FALSE, col.names=FALSE)
+write.table(x=sim3, file="sdata3", sep=" ", row.names=FALSE, col.names=FALSE)
+write.table(x=sim4, file="sdata4", sep=" ", row.names=FALSE, col.names=FALSE)
+write.table(x=sim5, file="sdata5", sep=" ", row.names=FALSE, col.names=FALSE)
+
+## View plots 
+#ts.plot(sim1)
+#ts.plot(sim2)
+#ts.plot(sim3)
+#ts.plot(sim4)
+#ts.plot(sim5)
+
+### TRASH ###
+  #forecastCov(data=sim1, horizons=1:20)
+  #acf(x=sim1, lag.max = 20,type = c("covariance"),plot=FALSE)
+
+#Alternative Code
+  #true.model <- ARMA(A=array(c(.3,.2,.1),c(3,1,1)), B=array(c(.1),c(1,1,1))) #A is the AR part; B is the MA part
+  #simA1 <- simulate(true.model, sampleT=1000, sd=1) #generate simulated data
+  #est.model <-  estMaxLik(true.model,  simA1) #estimate ARMA parameters of simulated data. noise is N(0,sd)
+  #est.model$model$coefficients #recover the coefficients
+  #tfplot(est.model)
+
+sink()

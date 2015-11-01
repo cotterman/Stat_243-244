@@ -1,0 +1,31 @@
+
+pooh.s243bn$ ./h1q3
+
+Please enter the probability level: .05
+
+Please enter the degrees of freedom: 20
+
+The chi-square value for probability level 0.05000 with           20
+dfs is 31.41043
+
+Would you like to do that again? (y or n)y
+Please enter the probability level: .95
+
+Please enter the degrees of freedom: 20
+
+The chi-square value for probability level 0.95000 with           20
+dfs is 10.85081
+
+Would you like to do that again? (y or n)y
+Please enter the probability level: .1
+
+Please enter the degrees of freedom: 34
+
+The chi-square value for probability level 0.10000 with           34
+dfs is 44.90316
+
+Would you like to do that again? (y or n)n
+
+Well alrighty then.  Hope you got what you wanted.  Goodbye!
+
+pooh.s243bn$

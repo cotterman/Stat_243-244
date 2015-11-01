@@ -1,0 +1,84 @@
+
+**************** Sweep *****************
+
+Before the sweep:
+This 3 by 3 matrix contains the following elements:
+Row 0: 11.000000  8.000000  5.000000  
+Row 1: 15.000000  30.000000  7.000000  
+Row 2: 2.000000  4.000000  13.000000  
+
+
+After the sweep:
+This 3 by 3 matrix contains the following elements:
+Row 0: 0.142857  -0.033149  -0.037096  
+Row 1: -0.071429  0.052486  -0.000789  
+Row 2: -0.000000  -0.011050  0.082873  
+
+
+After 2 sweeps (should look like before sweep):
+This 3 by 3 matrix contains the following elements:
+Row 0: 11.000000  8.000000  5.000000  
+Row 1: 15.000000  30.000000  7.000000  
+Row 2: 2.000000  4.000000  13.000000  
+
+
+********* Non-Linear Regression ********
+
+Matrix X1 (from file), non-linear regression original
+This 8 by 1 matrix contains the following elements:
+Row 0: 0.027000  
+Row 1: 0.044000  
+Row 2: 0.073000  
+Row 3: 0.102000  
+Row 4: 0.175000  
+Row 5: 0.257000  
+Row 6: 0.483000  
+Row 7: 0.670000  
+
+Matrix Y1 (from file), non-linear regression original
+This 8 by 1 matrix contains the following elements:
+Row 0: 12.700000  
+Row 1: 16.000000  
+Row 2: 20.400000  
+Row 3: 22.300000  
+Row 4: 26.000000  
+Row 5: 28.800000  
+Row 6: 29.600000  
+Row 7: 31.400000  
+
+Matrix X2 (from file), non-linear regression original
+This 15 by 3 matrix contains the following elements:
+Row 0: 1.000000  15.000000  1.000000  
+Row 1: 2.000000  14.000000  2.000000  
+Row 2: 3.000000  13.000000  3.000000  
+Row 3: 4.000000  12.000000  4.000000  
+Row 4: 5.000000  11.000000  5.000000  
+Row 5: 6.000000  10.000000  6.000000  
+Row 6: 7.000000  9.000000  7.000000  
+Row 7: 8.000000  8.000000  8.000000  
+Row 8: 9.000000  7.000000  7.000000  
+Row 9: 10.000000  6.000000  6.000000  
+Row 10: 11.000000  5.000000  5.000000  
+Row 11: 12.000000  4.000000  4.000000  
+Row 12: 13.000000  3.000000  3.000000  
+Row 13: 14.000000  2.000000  2.000000  
+Row 14: 15.000000  1.000000  1.000000  
+
+Matrix Y2 (from file), non-linear regression original
+This 15 by 1 matrix contains the following elements:
+Row 0: 0.140000  
+Row 1: 0.180000  
+Row 2: 0.220000  
+Row 3: 0.250000  
+Row 4: 0.290000  
+Row 5: 0.320000  
+Row 6: 0.350000  
+Row 7: 0.390000  
+Row 8: 0.370000  
+Row 9: 0.580000  
+Row 10: 0.730000  
+Row 11: 0.960000  
+Row 12: 1.340000  
+Row 13: 2.100000  
+Row 14: 4.390000  
+
